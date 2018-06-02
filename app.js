@@ -6,8 +6,46 @@ if(localStorage.a_users) {
 }
 
 function displayUsers(users) {
+var html = "<table border='1|1'>";
+    for (var i = 0; i < users.length; i++) {
+        html+="<tr>";
+        html+="<td>"+users[i].username+"</td>";
+        html+="<td>"+users[i].password+"</td>";
+        html+="<td>"+users[i].email+"</td>";
+        html+="<td>"+users[i].location+"</td>";
+        html+="<td>"+users[i].company+"</td>";
+        html+="</tr>";
 
+    }
+    html+="</table>";
+document.getElementById("box").innerHTML = html;
 }
+// function displayUsers(users) {
+//   var table = document.getElementsByTagName('table')[0],
+//   newrow = table.insertRow(1),
+//   cell1 = newrow.insertCell(0),
+//   cell2 = newrow.insertCell(1),
+//   cell3 = newrow.insertCell(2),
+//   cell4 = newrow.insertCell(3),
+//   cell5 = newrow.insertCell(4),
+//   // cell6 = newrow.insertCell(5);
+//
+//    username = document.getElementById('uname').value;
+//   var password = document.getElementById('pwd').value;
+//   var email = document.getElementById('eml').value;
+//   var location = document.getElementById('lc').value;
+//   var company = document.getElementById('cmp').value;
+//   // var gender = document.getElementById('gd1').value;
+//
+//   cell1.innerHTML = username;
+//   cell2.innerHTML = password;
+//   cell3.innerHTML = email;
+//   cell4.innerHTML = location;
+//   cell5.innerHTML = company;
+//   // cell6.innerHTML = gender;
+//
+//
+// }
 
 document.getElementById('btn').addEventListener('click', function() {
     var user = {
@@ -23,33 +61,10 @@ document.getElementById('btn').addEventListener('click', function() {
     localStorage.a_users = JSON.stringify(users);
 });
 
-var j = function (){
-    var table = document.getElementsByTagName('table')[0],
-    newrow = table.insertRow(1),
-    cell1 = newrow.insertCell(0),
-    cell2 = newrow.insertCell(1),
-    cell3 = newrow.insertCell(2),
-    cell4 = newrow.insertCell(3),
-    cell5 = newrow.insertCell(4),
-    // cell6 = newrow.insertCell(5);
-
-   var username = document.getElementById('uname').value;
-   var password = document.getElementById('pwd').value;
-   var email = document.getElementById('eml').value;
-   var location = document.getElementById('lc').value;
-   var company = document.getElementById('cmp').value;
-   // var gender = document.getElementById('gd1').value;
-
-    cell1.innerHTML = username;
-    cell2.innerHTML = password;
-    cell3.innerHTML = email;
-    cell4.innerHTML = location;
-    cell5.innerHTML = company;
-    // cell6.innerHTML = gender;
-
-};
-
-document.getElementById('btn').addEventListener('click', j());
+// var j = function (){
+//
+//
+// document.getElementById('btn').addEventListener('click', j());
 
 // function validateform(){
 //     var username = document.getElementById('uname').value;
